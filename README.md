@@ -90,4 +90,5 @@ faker, nltk, imbalanced-learn (for auxiliary experiments)
 
 Kirk Corwin
 Data Science @ North Seattle College
-GitHub | LinkedIn
+[LinkedIn](https://www.linkedin.com/in/kirk-corwin/)
+
