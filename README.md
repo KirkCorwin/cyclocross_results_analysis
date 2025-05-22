@@ -69,11 +69,11 @@ conda env create -f requirements.yaml
 conda activate cx_trends
 jupyter notebook
 ```
---
+---
 
 ## 📦 Dependencies
 
---
+---
 See environment.yaml for full list. Major tools used:
 
 Python 3.9
@@ -82,11 +82,11 @@ scikit-learn, pandas, seaborn, matplotlib
 
 faker, nltk, imbalanced-learn (for auxiliary experiments)
 
---
+---
 
 ## 👤 Author
 
---
+---
 
 Kirk Corwin
 Data Science @ North Seattle College
