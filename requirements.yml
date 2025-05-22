@@ -1,0 +1,24 @@
+name: cx_trends
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas
+  - numpy
+  - flake8
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - imbalanced-learn
+  - stable-baselines3
+  - gymnasium
+  - jupyter
+  - pip
+  - nltk
+  - faker
+  - pip:
+      - gymnasium[classic_control] # Only keeping necessary environments
+      - tqdm
+      - black
+      - nbqa
