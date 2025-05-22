@@ -27,8 +27,7 @@ This project analyzes race timing data while preserving participant anonymity. I
 - `matplotlib`
 - `faker`
 - `hashlib`
-- `TextBlob` (for optional sentiment analysis)
-
+  
 ## 🚀 Getting Started
 ```bash
 pip install pandas numpy seaborn matplotlib faker textblob
