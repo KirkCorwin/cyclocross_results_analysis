@@ -1,10 +1,10 @@
-# 🚴 Rider Performance Modeling
+# Rider Performance Modeling
 
 This project predicts race performance by modeling lap times relative to each racer's demographic peer group (age + gender). It uses past race history to build interpretable machine learning models for both broad and elite riders. The goal is to enable robust, fair, and realistic performance predictions.
 
 ---
 
-## 📌 Objective
+## Objective
 
 - Detect anomalously fast performances using statistical and ML-based anomaly detection.
 - Predict lap time relative to peer group using historical performance only.
@@ -12,7 +12,7 @@ This project predicts race performance by modeling lap times relative to each ra
 
 ---
 
-## 🔍 Dataset
+## Dataset
 
 - Anonymized race performance data including:
   - `anon_time`, `anon_age`, `gender`, `anon_category`, `anon_place`, `date`, `racer_id`
@@ -21,7 +21,7 @@ This project predicts race performance by modeling lap times relative to each ra
 
 ---
 
-## 🧠 Methods
+## Methods
 
 ### Anomaly Detection
 - **Z-score** (category-aware)
@@ -40,7 +40,7 @@ This project predicts race performance by modeling lap times relative to each ra
 
 ---
 
-## 📊 Results
+## Results
 
 | Dataset        | MAE    | RMSE   |
 |----------------|--------|--------|
@@ -51,7 +51,7 @@ Model is more accurate for the general population and predictably less so for ou
 
 ---
 
-## 🖼️ Visualizations
+## Visualizations
 
 - Predicted vs Actual (relative performance)
 - Residuals vs Predicted
@@ -62,7 +62,7 @@ All plots are saved in `/plots/`.
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 ```bash
 conda env create -f requirements.yaml
@@ -71,7 +71,7 @@ jupyter notebook
 ```
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 ---
 See environment.yaml for full list. Major tools used:
@@ -84,7 +84,7 @@ faker, nltk, imbalanced-learn (for auxiliary experiments)
 
 ---
 
-## 👤 Author
+## Author
 
 ---
 
