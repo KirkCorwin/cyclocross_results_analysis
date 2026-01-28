@@ -65,11 +65,23 @@ def clean(path, date, header_path=None, header_line=None):
 
     # Convert lap times to seconds (handle NaNs and dashes)
     df.replace('-', np.nan, inplace=True)
+    
+# Proeject Refactor 2 Lambda Usage
+
+    to_seconds = lambda s: (pd.to_timedelta('00:' + s, errors='coerce').dt.total_seconds()
+                            if pd.notna(s) else np.nan)
+    
     for column in new_columns:
-        if column.startswith('lap '):
-            mask = df[column].notna()
-            df.loc[mask, column] = pd.to_timedelta('00:' + df.loc[mask, column], errors='coerce').dt.total_seconds()
-            df[column] = pd.to_numeric(df[column], errors='coerce')
+            if column.startswith('lap '):
+                df[column] = df[column].apply(to_seconds)
+
+# Original
+
+    # for column in new_columns:
+    #     if column.startswith('lap '):
+    #         mask = df[column].notna()
+    #         df.loc[mask, column] = pd.to_timedelta('00:' + df.loc[mask, column], errors='coerce').dt.total_seconds()
+    #         df[column] = pd.to_numeric(df[column], errors='coerce')
 
     # Compute average lap time excluding Lap 1 (too variable)
     lap_columns = df.filter(regex=r'lap (?!.*1)').columns
