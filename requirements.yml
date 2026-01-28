@@ -1,7 +1,6 @@
 name: cx_trends
 channels:
   - conda-forge
-  - defaults
 dependencies:
   - python=3.9
   - pandas
@@ -12,13 +11,13 @@ dependencies:
   - seaborn
   - imbalanced-learn
   - stable-baselines3
-  - gymnasium
-  - jupyter
-  - pip
+  - gymnasium=0.29
+  - jupyterlab       
   - nltk
   - faker
+  - pip
   - pip:
-      - gymnasium[classic_control] # Only keeping necessary environments
+      - gymnasium[classic_control]
       - tqdm
       - black
       - nbqa
