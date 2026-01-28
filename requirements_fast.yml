@@ -1,0 +1,17 @@
+name: cx_trends
+channels:
+  - conda-forge
+dependencies:
+  # Core environment
+  - python=3.9
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - imbalanced-learn
+  - jupyterlab
+  - flake8
+  - nltk
+  - faker
+  - pip

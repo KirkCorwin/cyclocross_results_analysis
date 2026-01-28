@@ -69,6 +69,16 @@ conda env create -f requirements.yml
 conda activate cx_trends
 jupyter notebook
 ```
+
+### Alternative method if conda solve is taking too long
+
+```bash
+conda env create -f requirements_fast.yml
+conda activate cx_trends
+pip install stable-baselines3 gymnasium[classic_control] tqdm black nbqa
+jupyter notebook
+```
+
 ---
 
 ## Dependencies
