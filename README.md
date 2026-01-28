@@ -65,7 +65,7 @@ All plots are saved in `/plots/`.
 ## Setup
 
 ```bash
-conda env create -f requirements.yaml
+conda env create -f requirements.yml
 conda activate cx_trends
 jupyter notebook
 ```

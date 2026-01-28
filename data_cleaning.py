@@ -4,6 +4,24 @@ import importlib
 from io import StringIO
 import datetime as dt
 import numpy as np
+# For timing decorator
+import time
+
+# Decorator for timing functions
+
+def timed(func):
+    def wrapper(*args, **kwargs):
+        # Start timer
+        start = time.time()
+        result = func(*args, **kwargs)
+        # Get result and end timer
+        end = time.time()
+        print(func.__name__, "took the very long time of: ", end - start, "seconds")
+        # Pass along the result, decorator style
+        return result
+    # Return the function (cleaning for example, now contained within the wrapper)
+    return wrapper
+
 
 # Load column headers from a separate header file
 def initialize_columns(path, line):
@@ -13,6 +31,7 @@ def initialize_columns(path, line):
         return lines[1].lower()  # return header line
 
 # Clean and preprocess a single race file
+@timed
 def clean(path, date, header_path=None, header_line=None):
     CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
     os.chdir(CURRENT_DIRECTORY)
@@ -66,7 +85,7 @@ def clean(path, date, header_path=None, header_line=None):
     # Convert lap times to seconds (handle NaNs and dashes)
     df.replace('-', np.nan, inplace=True)
     
-# Proeject Refactor 2 Lambda Usage
+# Project Refactor 2 Lambda Usage
 
     to_seconds = lambda s: (pd.to_timedelta('00:' + s, errors='coerce').dt.total_seconds()
                             if pd.notna(s) else np.nan)
@@ -90,6 +109,7 @@ def clean(path, date, header_path=None, header_line=None):
     return df
 
 # Load and combine multiple race files into one DataFrame
+@timed
 def join_all(file_list, date_list, header_path=None, header_line=None):
     print(f"Initializing main data frame based on: {file_list[0]}")
     main_df = clean(file_list[0], date_list[0], header_path, header_line)
